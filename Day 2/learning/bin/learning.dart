@@ -1,5 +1,3 @@
-import 'package:learning/learning.dart' as learning;
-import 'person.dart';
 import 'student.dart';
 // OOP learning
 void main(List<String> arguments) {
