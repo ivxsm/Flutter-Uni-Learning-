@@ -1,6 +1,3 @@
-import 'dart:async';
-
-import 'package:only_dart/only_dart.dart' as only_dart;
 
 void main(List<String> arguments) {
 
@@ -30,11 +27,11 @@ for (var name in names){
 
 // list can take duble values while set can't
 
-Map student = {
-  'name': 'john',
-  'age': 20,
-  'marks': 90
-};
+// Map student = {
+//   'name': 'john',
+//   'age': 20,
+//   'marks': 90
+// };
 
 // starting with function
 
