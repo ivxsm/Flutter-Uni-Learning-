@@ -21,11 +21,12 @@ class FirstPage extends StatelessWidget {
           height: 122,
           width: 150,
           color: Colors.black,
-          child: const Text("Testing ", style: TextStyle(color: Color.fromARGB(255, 230, 233, 236) , fontSize: 30 , letterSpacing: 3),),
+          child: const Text("This Black ", style: TextStyle(color: Color.fromARGB(255, 230, 233, 236) , fontSize: 30 , letterSpacing: 2),),
         ), Container(
           height: 122,
           width: 150,
           color: const Color.fromARGB(255, 218, 7, 7),
+          child: const Text("This Red ", style: TextStyle(color: Color.fromARGB(255, 230, 233, 236) , fontSize: 30 , letterSpacing: 3),),
         ),
       ],)
     );
