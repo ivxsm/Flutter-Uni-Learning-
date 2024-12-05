@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mainproject/pages/page2.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({super.key});
@@ -16,19 +17,30 @@ class FirstPage extends StatelessWidget {
       ),
         ),
       ) ,
-      body: Row(children: [
-        Container(
-          height: 122,
-          width: 150,
-          color: Colors.black,
-          child: const Text("This Black ", style: TextStyle(color: Color.fromARGB(255, 230, 233, 236) , fontSize: 30 , letterSpacing: 2),),
-        ), Container(
-          height: 122,
-          width: 150,
-          color: const Color.fromARGB(255, 218, 7, 7),
-          child: const Text("This Red ", style: TextStyle(color: Color.fromARGB(255, 230, 233, 236) , fontSize: 30 , letterSpacing: 3),),
-        ),
-      ],)
+      body: Column(
+        children: [
+          Container(
+            height: 145,
+            width: 150,
+            color: Colors.black26,
+          ),
+          Container(height: 12,),
+          Container(
+            height: 145,
+            width: 150,
+            color: Colors.black,
+          ),
+          const Icon(Icons.network_wifi_3_bar , size: 50,),
+          const Text("data" ,style: TextStyle(fontSize: 24),),
+          ElevatedButton(onPressed:(){
+            print("Git gud");
+          }, child: Text("BREAK")),
+          ElevatedButton(onPressed: () {
+            Navigator.push(context, 
+            MaterialPageRoute(builder: (context)=> Page2()));
+          }, child: Text('Send a Gift'))
+        ],
+      )
     );
 
   } 
