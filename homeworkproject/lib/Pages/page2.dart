@@ -67,7 +67,10 @@ class Page2 extends StatelessWidget {
                           color: Colors.white,
                         )),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Page1()));
+                      },
                       child: const Text("Send!"),
                     )
                   ],
