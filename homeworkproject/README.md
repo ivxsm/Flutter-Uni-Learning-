@@ -2,6 +2,6 @@
 
 A new Flutter project.
 here is a screenshot of if , 
-![Simulator Screenshot - iPhone 15 Pro - 2024-12-07 at 21 57 07](https://github.com/user-attachments/assets/87031bc9-ee1f-4c68-ab40-aaf3ebe430e6)
-![Screenshot 2024-12-07 at 9 56 52 PM](https://github.com/user-attachments/assets/21eed90b-081e-457c-97bb-8f190345fda9)
-![Simulator Screenshot - iPhone 15 Pro - 2024-12-07 at 21 57 09](https://github.com/user-attachments/assets/25d37af6-8ce8-42ac-9355-9797f29b9f19)
+![Screenshot 2024-12-07 at 9 56 52 PM](https://github.com/user-attachments/assets/b8deef8d-c67a-463c-ab46-ed372a12f539)
+![Screenshot 2024-12-07 at 10 05 04 PM](https://github.com/user-attachments/assets/d0eb3d1d-f148-4405-92ba-01d43eacf486)
+![Screenshot 2024-12-07 at 10 04 58 PM](https://github.com/user-attachments/assets/16da8a34-309a-448a-be14-dde682ca2bb8)
