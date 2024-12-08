@@ -1,6 +1,8 @@
+import 'package:day6/Pages/info.dart';
 import 'package:flutter/material.dart';
 
 int counter = 0;
+
 // ignore: camel_case_types
 class intro_page extends StatefulWidget {
   const intro_page({super.key});
@@ -10,29 +12,45 @@ class intro_page extends StatefulWidget {
 }
 
 class _intro_pageState extends State<intro_page> {
+  TextEditingController nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.amberAccent,
-      // ),
+    return Scaffold(
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-               const TextField(
-                decoration: InputDecoration(
+              TextField(
+                controller: nameController,
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: " enter your name"),
               ),
-               const SizedBox( height: 12),
-              Text("Number is $counter" , style: const TextStyle(fontSize: 32),),
-             const  SizedBox( height: 32),
-              ElevatedButton(onPressed: (){
-                setState(() {
-                    counter++;      
-                });
-              }, child: const Text("press"))
+              const SizedBox(height: 12),
+              Text(
+                "Number is $counter",
+                style: const TextStyle(fontSize: 32),
+              ),
+              const SizedBox(height: 32),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          counter++;
+                        });
+                      },
+                      child: const Text("incress")),
+                      ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>  Info(name: nameController.text)));
+                        setState(() {});
+                      },
+                      child: const Text("go to page")),
+                ],
+              ),
+
             ],
           ),
         ),
