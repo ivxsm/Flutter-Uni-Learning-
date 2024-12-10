@@ -3,7 +3,7 @@ import 'package:day8/services/api.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  Api().gitdata();
+  Api().gitData();
   runApp(const MainApp());
 }
 
