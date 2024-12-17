@@ -19,4 +19,10 @@ class Database {
     await supabase.auth.signUp(password: password, email:email);
 
   }
+   Future login({ required String password ,required String email }) async{
+    await supabase.auth.signInWithPassword(password: password, email: email);
+  }
+  Future loginwithcode ({ required String email }) async{
+    await supabase.auth.signInWithOtp(email: email);
+  }
 }

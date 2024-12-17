@@ -13,11 +13,12 @@ class LoginPage extends StatelessWidget {
     TextEditingController passlcontroller = TextEditingController();
     return Scaffold(
       appBar: AppBar(
-        title: Text('log in'),
+        title: Text('login / sign in'),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('sign up'),
             TextField(
@@ -44,23 +45,47 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 12,
             ),
-            ElevatedButton(
-              onPressed: () async {
-              try {
-                  await Database().signup(
-                    password: passlcontroller.text, email: emalcontroller.text);
-
-                if (context.mounted) {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const First()));
-                }
-              } catch (e) {
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
-              }
-              },
-              child: Text("sign up"),
-              style:
-                  ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () async {
+                  try {
+                      await Database().signup(
+                        password: passlcontroller.text, email: emalcontroller.text);
+                
+                    if (context.mounted) {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => const First()));
+                    }
+                  } catch (e) {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
+                  }
+                  },
+                  child: Text("sign up"),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),
+                ),
+                SizedBox(width: 12,),
+                 ElevatedButton(
+                  onPressed: () async {
+                  try {
+                      await Database().login(
+                        password: passlcontroller.text, email: emalcontroller.text);
+                
+                    if (context.mounted) {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => const First()));
+                    }
+                  } catch (e) {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
+                  }
+                  },
+                  child: Text("sign in"),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),
+                ),
+              ],
             )
           ],
         ),
