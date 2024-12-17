@@ -14,4 +14,9 @@ class Database {
     print(studetlist);
     return studetlist;
   }
+
+  Future signup ({ required String password ,required String email}) async{
+    await supabase.auth.signUp(password: password, email:email);
+
+  }
 }

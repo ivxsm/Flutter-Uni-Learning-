@@ -4,7 +4,7 @@ class Student {
   int? id;
   String? name;
   int? age;
-  int? salary;
+  double? salary;
 
   Student({this.age, this.name, this.id, this.salary});
 

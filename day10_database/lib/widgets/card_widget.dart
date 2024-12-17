@@ -4,7 +4,7 @@ class CardWidget extends StatelessWidget {
   final int? id;
   final String? name;
   final int? age;
-  final int? salary;
+  final double? salary;
   const CardWidget({super.key, required this.age,required  this.name,required  this.id,required  this.salary});
 
   @override
