@@ -16,6 +16,8 @@ class _LoginPageState extends State<LoginPage> {
   final FocusNode focusNodemil = FocusNode();
   final FocusNode focusNodpass = FocusNode();
 
+  bool visiable = true;
+
   @override
   void initState() {
     super.initState();
@@ -52,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
               color: Colors.black,
               size: 50.0,
             ),
-            SizedBox(height: 12),
+            const SizedBox(height: 12),
             TextField(
               focusNode: focusNodemil,
               controller: emailController,
@@ -60,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                 FocusScope.of(context).unfocus();
               },
               decoration: InputDecoration(
-                prefixIcon: const HugeIcon(
+                suffixIcon: const HugeIcon(
                   icon: HugeIcons.strokeRoundedMail01,
                   color: Colors.black,
                   size: 24.0,
@@ -77,17 +79,31 @@ class _LoginPageState extends State<LoginPage> {
             ),
             const SizedBox(height: 12),
             TextField(
+              obscureText: visiable,
               focusNode: focusNodpass,
               controller: passwordController,
               onTapOutside: (event) {
                 FocusScope.of(context).unfocus();
               },
               decoration: InputDecoration(
-                prefixIcon: const HugeIcon(
-                  icon: HugeIcons.strokeRoundedSquareLockPassword,
-                  color: Colors.black,
-                  size: 24.0,
+                suffixIcon: InkWell(
+                  onTap: (){
+                    visiable = !visiable;
+                    setState(() {
+                    });
+                  },
+                  child: HugeIcon(
+                    icon: visiable? HugeIcons.strokeRoundedEye : HugeIcons.strokeRoundedViewOff,
+                    color: Colors.black,
+                    size: 24.0,
+                  ),
                 ),
+                // prefixIcon: const HugeIcon(
+                //   icon: HugeIcons.strokeRoundedSquareLockPassword,
+                //   color: Colors.black,
+                //   size: 24.0,
+                // ),
+                
                 labelText: focusNodpass.hasFocus ? 'password' : null,
                 floatingLabelAlignment: FloatingLabelAlignment.center,
                 labelStyle: const TextStyle(fontSize: 15),
@@ -137,7 +153,6 @@ class _LoginPageState extends State<LoginPage> {
                         password: passwordController.text,
                         email: emailController.text,
                       );
-
                       if (context.mounted) {
                         Navigator.push(
                           context,
