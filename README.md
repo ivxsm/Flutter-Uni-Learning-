@@ -1,6 +1,3 @@
-# day10_database
-
-A new Flutter project.
 
 ## Sign In and Login
 
