@@ -11,8 +11,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController emalcontroller = TextEditingController();
-  final TextEditingController passlcontroller = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   final FocusNode focusNodemil = FocusNode();
   final FocusNode focusNodpass = FocusNode();
 
@@ -20,17 +20,17 @@ class _LoginPageState extends State<LoginPage> {
   void initState() {
     super.initState();
     focusNodemil.addListener(() {
-      setState(() {}); 
+      setState(() {});
     });
     focusNodpass.addListener(() {
-      setState(() {}); 
+      setState(() {});
     });
   }
 
   @override
   void dispose() {
-    emalcontroller.dispose();
-    passlcontroller.dispose();
+    emailController.dispose();
+    passwordController.dispose();
     focusNodemil.dispose();
     focusNodpass.dispose();
     super.dispose();
@@ -55,51 +55,50 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(height: 12),
             TextField(
               focusNode: focusNodemil,
-              controller: emalcontroller,
+              controller: emailController,
               onTapOutside: (event) {
                 FocusScope.of(context).unfocus();
               },
               decoration: InputDecoration(
-                prefixIcon: HugeIcon(
+                prefixIcon: const HugeIcon(
                   icon: HugeIcons.strokeRoundedMail01,
                   color: Colors.black,
                   size: 24.0,
                 ),
-                labelStyle: TextStyle(fontSize: 15),
+                labelStyle: const TextStyle(fontSize: 15),
                 labelText: focusNodemil.hasFocus ? 'Email' : null,
                 floatingLabelAlignment: FloatingLabelAlignment.center,
-                border: OutlineInputBorder(
+                border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(
                     Radius.circular(16),
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 12),
+            const SizedBox(height: 12),
             TextField(
-              
               focusNode: focusNodpass,
-              controller: passlcontroller,
+              controller: passwordController,
               onTapOutside: (event) {
                 FocusScope.of(context).unfocus();
               },
               decoration: InputDecoration(
-                prefixIcon: HugeIcon(
+                prefixIcon: const HugeIcon(
                   icon: HugeIcons.strokeRoundedSquareLockPassword,
                   color: Colors.black,
                   size: 24.0,
                 ),
-                labelStyle: TextStyle(fontSize: 15),
-                labelText: focusNodpass.hasFocus ? 'password' : null, 
+                labelText: focusNodpass.hasFocus ? 'password' : null,
                 floatingLabelAlignment: FloatingLabelAlignment.center,
-                border: OutlineInputBorder(
+                labelStyle: const TextStyle(fontSize: 15),
+                border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(
                     Radius.circular(16),
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 12),
+            const SizedBox(height: 12),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -107,8 +106,8 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () async {
                     try {
                       await Database().signup(
-                        password: passlcontroller.text,
-                        email: emalcontroller.text,
+                        password: passwordController.text,
+                        email: emailController.text,
                       );
 
                       if (context.mounted) {
@@ -125,18 +124,18 @@ class _LoginPageState extends State<LoginPage> {
                       );
                     }
                   },
-                  child: Text("sign up"),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blueAccent,
                   ),
+                  child: const Text("sign up"),
                 ),
-                SizedBox(width: 12),
+                const SizedBox(width: 12),
                 ElevatedButton(
                   onPressed: () async {
                     try {
                       await Database().login(
-                        password: passlcontroller.text,
-                        email: emalcontroller.text,
+                        password: passwordController.text,
+                        email: emailController.text,
                       );
 
                       if (context.mounted) {
@@ -153,10 +152,10 @@ class _LoginPageState extends State<LoginPage> {
                       );
                     }
                   },
-                  child: Text("sign in"),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blueAccent,
                   ),
+                  child: const Text("sign in"),
                 ),
               ],
             ),

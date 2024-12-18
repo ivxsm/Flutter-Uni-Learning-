@@ -1,6 +1,4 @@
-import 'package:day10_database/pages/first.dart';
 import 'package:day10_database/pages/login_page.dart';
-import 'package:day10_database/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 

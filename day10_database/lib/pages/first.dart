@@ -13,15 +13,15 @@ class First extends StatefulWidget {
 class _FirstState extends State<First> {
   @override
   Widget build(BuildContext context) {
-    final TextEditingController namecontroller = TextEditingController();
-    final TextEditingController agecontroller = TextEditingController();
-    final TextEditingController salarycontroller = TextEditingController();
+    final TextEditingController nameController = TextEditingController();
+    final TextEditingController ageController = TextEditingController();
+    final TextEditingController salaryController = TextEditingController();
 
     @override
     void dispose() {
-      namecontroller.dispose();
-      agecontroller.dispose();
-      salarycontroller.dispose();
+      nameController.dispose();
+      ageController.dispose();
+      salaryController.dispose();
       super.dispose();
     }
 
@@ -64,16 +64,16 @@ class _FirstState extends State<First> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     TextField(
-                      controller: namecontroller,
-                      decoration: InputDecoration(
+                      controller: nameController,
+                      decoration: const InputDecoration(
                         prefixIcon: HugeIcon(
                           icon: HugeIcons.strokeRoundedSquareLockPassword,
                           color: Colors.black,
                           size: 24.0,
                         ),
-                        labelStyle: const TextStyle(fontSize: 15),
+                        labelStyle: TextStyle(fontSize: 15),
                         labelText: 'Name',
-                        border: const OutlineInputBorder(
+                        border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
                             Radius.circular(16),
                           ),
@@ -82,16 +82,16 @@ class _FirstState extends State<First> {
                     ),
                     const SizedBox(height: 12),
                     TextField(
-                      controller: agecontroller,
-                      decoration: InputDecoration(
+                      controller: ageController,
+                      decoration: const InputDecoration(
                         prefixIcon: HugeIcon(
                           icon: HugeIcons.strokeRoundedSquareLockPassword,
                           color: Colors.black,
                           size: 24.0,
                         ),
-                        labelStyle: const TextStyle(fontSize: 15),
+                        labelStyle: TextStyle(fontSize: 15),
                         labelText: 'Age',
-                        border: const OutlineInputBorder(
+                        border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
                             Radius.circular(16),
                           ),
@@ -100,16 +100,16 @@ class _FirstState extends State<First> {
                     ),
                     const SizedBox(height: 12),
                     TextField(
-                      controller: salarycontroller,
-                      decoration: InputDecoration(
+                      controller: salaryController,
+                      decoration: const InputDecoration(
                         prefixIcon: HugeIcon(
                           icon: HugeIcons.strokeRoundedSquareLockPassword,
                           color: Colors.black,
                           size: 24.0,
                         ),
-                        labelStyle: const TextStyle(fontSize: 15),
+                        labelStyle: TextStyle(fontSize: 15),
                         labelText: 'Salary',
-                        border: const OutlineInputBorder(
+                        border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
                             Radius.circular(16),
                           ),
@@ -130,9 +130,9 @@ class _FirstState extends State<First> {
                       TextButton(
                           onPressed: () {
                             Database().addStudent(
-                                name: namecontroller.text,
-                                age: int.parse(agecontroller.text),
-                                salary: double.parse(salarycontroller.text));
+                                name: nameController.text,
+                                age: int.parse(ageController.text),
+                                salary: double.parse(salaryController.text));
                             Navigator.of(context).pop();
                             setState(() {
                               
