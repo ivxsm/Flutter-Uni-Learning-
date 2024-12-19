@@ -1,11 +1,9 @@
+import 'package:day10_database/model/student.dart';
 import 'package:flutter/material.dart';
 
 class CardWidget extends StatelessWidget {
-  final int? id;
-  final String? name;
-  final int? age;
-  final double? salary;
-  const CardWidget({super.key, required this.age,required  this.name,required  this.id,required  this.salary});
+  final Student student ; 
+  const CardWidget({super.key, required this.student});
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +15,15 @@ class CardWidget extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text("$id"),
+                Text(student.id.toString()),
                 const SizedBox(
                   width: 8,
                 ),
-                Text(name!),
+                Text(student.name.toString()),
               ],
             ),
-            Text(age.toString()),
-            Text(salary.toString()),
+            Text(student.age.toString()),
+            Text(student.salary.toString()),
           ],
         ),
       ),
