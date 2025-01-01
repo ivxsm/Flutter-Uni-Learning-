@@ -11,10 +11,10 @@ class Database {
     List<Student> studetlist = [];
     for (var element in response) {
       studetlist.add(Student.fromjson(element));
-    }
+    } 
     return studetlist;
   }
-// add student 
+// add student '
   addStudent ({required String name , required int age , required double salary}) async{
     await supabase.from('student').insert(
       {
